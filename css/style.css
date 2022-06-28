@@ -1,0 +1,138 @@
+/*inicio paginas*/
+* {
+  font-family: "Kdam Thmor Pro", sans-serif, "Roboto", sans-serif;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  background-image: linear-gradient(to right top, #515374, #545f82, #566c8f, #58799c, #5a86a8);
+}
+
+.wrapper {
+  display: grid;
+  grid-template-areas:
+    "miHeader miHeader"
+    "miMain miAside"
+    "miFooter miFooter"
+    ;
+  grid-template-columns: auto 300px;
+  grid-template-rows: 200px auto 100px;
+  grid-row-gap: 10px;
+  grid-column-gap: 10px;
+}
+
+/*fin general*/
+/*inicio header*/
+.header {
+  grid-area: miHeader;
+  background-color: rgba(53, 107, 107, 0.58);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.headerNavDisplay {
+  display: flex;
+  padding: 0;
+}
+
+.headerNavLi {
+  display: flex;
+  padding: 0;
+  margin-left: 5px
+}
+
+.ulAnim li:hover {  
+    animation: divAnim 2s ease 0s 1 normal forwards;
+    transform: scale(1.1);
+    transition: transform 0.75s; 
+  }
+
+/*fin header*/
+
+
+/*inicio main*/
+.main {
+  grid-area: miMain;
+  margin-left: 5px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* main subpaginas*/
+
+.mainInic {
+  grid-area: miMain;
+  display: grid;
+  grid-template-areas:
+  "title title" 
+  "miDiv1 miDiv2"
+  "miDiv3 miDiv3";}
+
+/*fin subpaginas*/
+
+/* Divs main*/
+.divAnim:hover { 
+  animation: divAnim 2s ease 0s 1 normal forwards; 
+}
+
+@keyframes divAnim {
+	0% {
+		box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+	}
+
+	100% {
+		box-shadow: -12px 12px 20px -12px rgba(0, 0, 0, 0.35);
+	}
+}
+/*fin main*/
+
+
+/*inicio sidebar*/
+.sidebar {
+  grid-area: miAside
+}
+/*fin sidebar*/
+
+/*inicio de footer*/
+footer {
+  grid-area: miFooter
+}
+/* fin de footer*/
+
+
+/*inicio CSS contacto*/
+form {
+  width: 50%
+}
+
+/* inicio media querys*/
+
+@media only screen and (max-width: 600px)
+{
+  .headerNavDisplay {
+    display: flex;
+    padding: 0;
+    flex-direction: column;
+  }
+  .wrapper {
+    display: grid;
+    grid-template-areas:
+      "miHeader"
+      "miMain"
+      "miFooter"
+      ;
+    grid-template-columns: auto ;
+    grid-template-rows: auto;
+    grid-row-gap: 10px;
+    grid-column-gap: 10px;
+  }
+
+
+  .sidebar {
+    display: none;
+  }
+}
+
+/*fin media querys*/
